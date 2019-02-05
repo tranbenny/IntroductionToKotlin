@@ -5,6 +5,7 @@
 * Kotlin Timeline
 * Kotlin Compilation Process
 * Variables and Data Types
+* String Templates and Interpolation 
 
 
 ### Kotlin Features
@@ -45,6 +46,8 @@ fun main(args: Array<String>) {
 
 ```
 
+## Language and Syntax Features
+
 
 ### Variables and Data Types
 ####Keywords
@@ -75,9 +78,94 @@ var isAlive = true
 * Int (32 bit)
 * Long (64 bit)
 * Float (32 bit)
+	* requires 'f' or 'F' suffix
+	* i.e. val floatValue = 4.5F
 * Double (64 bit)
 * all variable types are objects, so they all must be initialized in order to have a default value 
 
+
+### String Templates and Interpolation 
+**Example**
+```kotlin
+val name = "Benny"
+// without string interpolation
+println("My name is " + name)
+// with string interpolation
+println("My name is $name")
+
+// example with expression
+println("The name variable has length " + name.length)
+println("The name variable has length ${name.length}")
+
+
+```
+
+
+### If expressions
+** Example **
+```kotlin
+
+val a: Int = 2
+val b: Int = 5
+
+val maxIfExpressionExample:Int = if (a > b) {
+    a
+} else {
+    b
+}
+
+```
+
+### When Expressions
+* similar to switch/case statements in java
+
+**When, Range Conditional Example**
+```kotlin 
+
+val x = 1
+
+when(x) {
+    1 -> println("x is 1")
+    2 -> println("x is 2")
+    in 5..10 -> println("x is in the range of 3-10")
+    else -> {
+        println("$x is not handled")
+        println("Unknown Case");
+    }
+}
+
+// when expression example
+
+var msg: String
+
+msg = when(x) {
+    1 -> "x is 1"
+    2 -> "x is 2"
+    in 5..10 -> "x is in the range of 5-10"
+    else -> {
+        println("$x is not handled")
+        "Unknown Case"
+    }
+}
+
+
+```
+
+
+### Loops
+Basic For Loop
+```kotlin
+// print all the even numbers between 1 - 10
+
+for (x in 1..10) {
+    if (x % 2 == 0) {
+        println(x)
+    }
+}
+
+```
+
+### Exception Handling
 
 
 
